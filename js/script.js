@@ -21,6 +21,7 @@ if (localStorage.getItem('arr')) {
    renderElements(arr);
    displayElement(footer, arr);
    setCounter(counterBox, arr);
+   allBtn.classList.add('active__footer');
 }
 form.addEventListener('submit', (e)=> {
    e.preventDefault;
@@ -138,7 +139,6 @@ footer.addEventListener('click', (e) =>{
       arrToLocalStorage();
    }
 });
-
 function deleteActiveFooter () {
    for (let i = 0; i < footer.children.length; i++) {
       if (footer.children[1].children[i].classList.contains('active__footer')) {
@@ -146,7 +146,6 @@ function deleteActiveFooter () {
       }
    }
 }
-
 function changeTheme() {
    if (document.body.classList.contains("dark-theme")) {
        localStorage.setItem("isDark", "false");
@@ -156,8 +155,6 @@ function changeTheme() {
        document.body.classList.toggle("dark-theme");
    }
 }
-
-
 function arrToLocalStorage () {
    localStorage.setItem('arr', JSON.stringify(arr));
 }
